@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syed Kamrul Hasan - AI & Data Scientist Portfolio</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Load Lucide icons (Corrected from lucide-react to lucide) -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <!-- Load Lucide icons (Corrected from lucide-react to lucide) --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -35,16 +32,13 @@
 </head>
 <body class="bg-gray-900 text-gray-100 antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700">
+    <!-- Header & Navigation --><header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo / Your Name -->
-                <div class="flex-shrink-0">
+                <!-- Logo / Your Name --><div class="flex-shrink-0">
                     <a href="#" class="text-2xl font-bold text-white">Syed Kamrul Hasan</a>
                 </div>
-                <!-- Navigation Links (Desktop) -->
-                <div class="hidden sm:block sm:ml-6">
+                <!-- Navigation Links (Desktop) --><div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
                         <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                         <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
@@ -52,23 +46,19 @@
                         <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
-                <!-- Mobile Menu Button (hidden for now, can be added) -->
-            </div>
+                <!-- Mobile Menu Button (hidden for now, can be added) --></div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="pt-16">
+    <!-- Main Content --><main class="pt-16">
 
-        <!-- Hero Section -->
-        <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col md:flex-row items-center fade-in">
-            <!-- Left Column (Text) -->
-            <div class="md:w-3/5 lg:w-1/2 md:pr-12">
+        <!-- Hero Section --><section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col md:flex-row items-center fade-in">
+            <!-- Left Column (Text) --><div class="md:w-3/5 lg:w-1/2 md:pr-12">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
                     Hi, I'm Syed Kamrul Hasan
                 </h1>
                 <h2 id="user-role" class="text-2xl sm:text-3xl font-medium text-cyan-400 mb-6">
-                    Data Scientist, ML & AI Specialist
+                    Data Scientist, ML Specialist & AI Enthusiast
                 </h2>
                 <p id="user-bio" class="text-lg text-gray-300 mb-8">
                     I build intelligent systems and uncover insights from data. From predictive modeling to deep learning, I'm passionate about solving complex problems with technology.
@@ -82,30 +72,25 @@
                     </a>
                 </div>
             </div>
-            <!-- Right Column (Image) -->
-            <div class="md:w-2/5 lg:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
-                <!-- Placeholder for your professional headshot -->
-                <div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gray-800 rounded-full border-4 border-cyan-500 shadow-2xl overflow-hidden">
+            <!-- Right Column (Image) --><div class="md:w-2/5 lg:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
+                <!-- Placeholder for your professional headshot --><div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gray-800 rounded-full border-4 border-cyan-500 shadow-2xl overflow-hidden">
                     <img 
                         src="headshot_reduce_resized.jpg" 
                         alt="A professional headshot of Syed Kamrul Hasan"
-                        class="w-full h-full object-cover"
-                        onerror="this.src='https://placehold.co/400x400/111827/7DD3FC?text=Your+Photo'; this.onerror=null;"
+                        class="w-full h-full object-cover object-top" <!-- MODIFIED: Changed object-contain back to object-cover, kept object-top -->onerror="this.src='https://placehold.co/400x400/111827/7DD3FC?text=Your+Photo'; this.onerror=null;"
                     >
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="bg-gray-800 py-20 md:py-24">
+        <!-- Skills Section --><section id="skills" class="bg-gray-800 py-20 md:py-24">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12 fade-in">
                     My Technical Toolkit
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <!-- Column 1: Languages & Databases -->
-                    <div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-1 opacity-0">
+                    <!-- Column 1: Languages & Databases --><div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-1 opacity-0">
                         <div class="flex items-center mb-4">
                             <i data-lucide="database" class="w-8 h-8 text-cyan-400 mr-3"></i>
                             <h3 class="text-2xl font-semibold text-white">Languages & Databases</h3>
@@ -118,8 +103,7 @@
                         </ul>
                     </div>
                     
-                    <!-- Column 2: ML & DL Frameworks -->
-                    <div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-2 opacity-0">
+                    <!-- Column 2: ML & DL Frameworks --><div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-2 opacity-0">
                         <div class="flex items-center mb-4">
                             <i data-lucide="brain-circuit" class="w-8 h-8 text-cyan-400 mr-3"></i>
                             <h3 class="text-2xl font-semibold text-white">ML & Deep Learning</h3>
@@ -132,8 +116,7 @@
                         </ul>
                     </div>
                     
-                    <!-- Column 3: Tools & Platforms -->
-                    <div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-3 opacity-0">
+                    <!-- Column 3: Tools & Platforms --><div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-3 opacity-0">
                         <div class="flex items-center mb-4">
                             <i data-lucide="wrench" class="w-8 h-8 text-cyan-400 mr-3"></i>
                             <h3 class="text-2xl font-semibold text-white">Tools & Platforms</h3>
@@ -150,11 +133,7 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        
-
-        <!-- Contact Section -->
-        <section id="contact" class="bg-gray-800 py-20 md:py-24">
+        <!-- Projects Section --><!-- Contact Section --><section id="contact" class="bg-gray-800 py-20 md:py-24">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
                     Let's Connect
@@ -166,11 +145,13 @@
                     Say Hello
                 </a>
                 
-                <!-- Social Links -->
-                <div class="flex justify-center space-x-6">
-                    <a href="https://www.linkedin.com/in/syed-kamrul-hasan-48a72548" class="text-gray-400 hover:text-white transition duration-300" aria-label="LinkedIn Profile">...</a>
-                    <a href="https://github.com/skamrulh" class="text-gray-400 hover:text-white transition duration-300" aria-label="GitHub Profile">...</a>
-
+                <!-- Social Links --><div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/syed-kamrul-hasan-48a72548" class="text-gray-400 hover:text-white transition duration-300" aria-label="LinkedIn Profile">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="https://github.com/skamrulh" class="text-gray-400 hover:text-white transition duration-300" aria-label="GitHub Profile">
+                        <i data-lucide="github" class="w-8 h-8"></i>
+                    </a>
                 
                 </div>
             </div>
@@ -178,8 +159,7 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-700">
+    <!-- Footer --><footer class="bg-gray-900 border-t border-gray-700">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
             <p class="text-gray-400 text-sm">
                 &copy; 2025 Syed Kamrul Hasan. All rights reserved.
@@ -187,8 +167,7 @@
         </div>
     </footer>
 
-    <!-- Script to initialize Lucide icons and Gemini API -->
-    <script>
+    <!-- Script to initialize Lucide icons and Gemini API --><script>
         // Wait for the DOM to be fully loaded before running scripts
         document.addEventListener("DOMContentLoaded", function() {
             // Check if lucide is available, then create icons
@@ -382,6 +361,3 @@
     </script>
 </body>
 </html>
-
-
-
