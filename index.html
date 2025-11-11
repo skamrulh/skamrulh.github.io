@@ -133,7 +133,58 @@
             </div>
         </section>
 
-        <!-- Projects Section --><!-- Contact Section --><section id="contact" class="bg-gray-800 py-20 md:py-24">
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12 fade-in">
+                    Featured Projects
+                </h2>
+                
+                <!-- Project Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1 -->
+                    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col fade-in fade-in-delay-4 opacity-0">
+                        <img 
+                            src="https://placehold.co/600x400/1F2937/7DD3FC?text=Project+1+Image" 
+                            alt="Screenshot of Project 1" 
+                            class="w-full h-48 object-cover"
+                            onerror="this.src='https://placehold.co/600x400/1F2937/7DD3FC?text=Project+1+Image'; this.onerror=null;"
+                        >
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 id="project-title-1" class="text-2xl font-semibold text-white mb-3">Project Title 1: End-to-End Predictive Maintenance ML Pipeline</h3>
+                            <p id="project-desc-1" class="text-gray-300 mb-4 flex-grow">
+                                Engineered a complete ML pipeline from synthetic data generation to production deployment using technologies 
+                                Python, Scikit-learn, FastAPI, Model Deployment, MLOps. Delivered models achieving 0.95+ ROC-AUC for failure 
+                                classification and <30 hours MAE for RUL prediction, with capability to process 10,000+ predictions per hour.
+                            </p>
+                            <!-- Tags for technologies used -->
+                            <div id="project-tags-1" class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">NLP</span>
+                            </div>
+                            <div class="mt-auto pt-4 border-t border-gray-700 space-y-3">
+
+                                    <!-- FIX: Added 'spinner' class to be used as a selector -->
+                                    <i data-lucide="loader-2" class="w-4 h-4 ml-2 animate-spin hidden spinner"></i>
+                                </button>
+                                <a href="https://github.com/skamrulh/" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium group">
+                                    View on GitHub
+                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        <!-- Contact Section --><section id="contact" class="bg-gray-800 py-20 md:py-24">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
                     Let's Connect
@@ -361,4 +412,5 @@
     </script>
 </body>
 </html>
+
 
