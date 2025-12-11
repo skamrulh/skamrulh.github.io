@@ -3,411 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Kamrul Hasan - AI & Data Scientist Portfolio</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter font --><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Load Lucide icons (Corrected from lucide-react to lucide) --><script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <title>Syed Kamrul Hasan - AI & Data Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        slate: { 850: '#151f32', 900: '#0f172a', 950: '#020617' }
+                    },
+                    animation: { 'blob': 'blob 10s infinite' },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        /* Simple animation for fade-in on load */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-        /* Staggered fade-in for list items */
-        .fade-in-delay-1 { animation-delay: 0.1s; }
-        .fade-in-delay-2 { animation-delay: 0.2s; }
-        .fade-in-delay-3 { animation-delay: 0.3s; }
-        .fade-in-delay-4 { animation-delay: 0.4s; }
-        .fade-in-delay-5 { animation-delay: 0.5s; }
-        .fade-in-delay-6 { animation-delay: 0.6s; }
+        .fade-in-section.is-visible { opacity: 1; transform: none; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 antialiased">
+<body class="bg-slate-950 text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <!-- Header & Navigation --><header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-700">
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/5 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-slate-800/50">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo / Your Name --><div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-white">Syed Kamrul Hasan</a>
+            <div class="flex justify-between items-center h-16"> <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 bg-gradient-to-br from-cyan-500 to-indigo-600 rounded flex items-center justify-center text-white font-bold text-sm">S</div>
+                    <a href="#" class="text-lg font-bold text-white tracking-tight">Syed Kamrul Hasan</a>
                 </div>
-                <!-- Navigation Links (Desktop) --><div class="hidden sm:block sm:ml-6">
-                    <div class="flex space-x-4">
-                        <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-xs font-medium text-slate-300 hover:text-cyan-400 transition-colors uppercase tracking-wide">About</a>
+                    <a href="#experience" class="text-xs font-medium text-slate-300 hover:text-cyan-400 transition-colors uppercase tracking-wide">Experience</a>
+                    <a href="#projects" class="text-xs font-medium text-slate-300 hover:text-cyan-400 transition-colors uppercase tracking-wide">Projects</a>
+                    <a href="#education" class="text-xs font-medium text-slate-300 hover:text-cyan-400 transition-colors uppercase tracking-wide">Education</a>
+                    <a href="#certifications" class="text-xs font-medium text-slate-300 hover:text-cyan-400 transition-colors uppercase tracking-wide">Certificates</a>
+                    <a href="#contact" class="px-4 py-1.5 text-xs font-bold text-white bg-cyan-600 hover:bg-cyan-500 rounded-full transition-all">Contact</a>
                 </div>
-                <!-- Mobile Menu Button (hidden for now, can be added) --></div>
+            </div>
         </nav>
     </header>
 
-    <!-- Main Content --><main class="pt-16">
+    <main class="relative z-10 pt-16">
 
-        <!-- Hero Section --><section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 flex flex-col md:flex-row items-center fade-in">
-            <!-- Left Column (Text) --><div class="md:w-3/5 lg:w-1/2 md:pr-12">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-                    Hi, I'm Syed Kamrul Hasan
-                </h1>
-                <h2 id="user-role" class="text-2xl sm:text-3xl font-medium text-cyan-400 mb-6">
-                    Data Scientist, ML & AI Specialist
+        <section id="about" class="min-h-[85vh] flex items-center justify-center px-4 py-16">
+            <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-section">
+                    <div class="inline-flex items-center gap-2 px-2 py-1 rounded bg-slate-900 border border-slate-800 text-cyan-400 text-[10px] font-bold uppercase tracking-wider mb-4">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Open to Work
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+                        Data Scientist & <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">AI Engineer</span>
+                    </h1>
+                    <p class="text-base text-slate-400 mb-6 max-w-lg leading-relaxed">
+                        Building intelligent, scalable systems. Specializing in End-to-End MLOps, Computer Vision, and Predictive Analytics.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#projects" class="px-5 py-2.5 text-sm font-semibold text-white bg-cyan-600 hover:bg-cyan-500 rounded transition-all">View Projects</a>
+                        <a href="#contact" class="px-5 py-2.5 text-sm font-semibold text-slate-300 border border-slate-700 hover:bg-slate-800 rounded transition-all">Contact Me</a>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center lg:justify-end fade-in-section delay-100">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+                        <div class="absolute inset-0 rounded-full border border-dashed border-cyan-500/30 animate-[spin_20s_linear_infinite]"></div>
+                        <div class="absolute inset-3 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-800 shadow-2xl">
+                            <img src="headshot_reduce_resized.jpg" alt="Syed Kamrul Hasan" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Syed+Hasan&background=0f172a&color=fff';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 bg-slate-900/30 border-y border-slate-800/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3 fade-in-section">
+                    <i data-lucide="briefcase" class="text-cyan-400 w-6 h-6"></i> Professional Experience
                 </h2>
-                <p id="user-bio" class="text-lg text-gray-300 mb-8">
-                    I build intelligent systems and uncover insights from data. From predictive modeling to deep learning, I'm passionate about solving complex problems with technology.
+                
+                <div class="relative border-l border-slate-800 ml-3 space-y-10 fade-in-section">
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-cyan-500"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                            <h3 class="text-lg font-semibold text-white">Independent AI Researcher & Strategy Consultant</h3>
+                            <span class="text-xs font-mono text-slate-500">2025 - Present</span>
+                        </div>
+                        <p class="text-sm text-cyan-400 mb-2">Self-Employed / Freelance • Dhaka, Bangladesh</p>
+                        <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+                            <li>Dedicated intensive focus to mastering Generative AI, LLM architectures, and Prompt Engineering, achieving multiple specialized certifications (DeepLearning.AI, Learn Prompting) to transition into senior-level AI leadership.</li>
+                            <li>Provided short-term operational and financial consulting services while architecting the advanced machine learning simulations and architectural prototypes detailed in the "Github portfolio projects" section.</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative border-l border-slate-800 ml-3 space-y-10 fade-in-section">
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-cyan-500"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                            <h3 class="text-lg font-semibold text-white">IT Consultant</h3>
+                            <span class="text-xs font-mono text-slate-500">2023 - 2024</span>
+                        </div>
+                        <p class="text-sm text-cyan-400 mb-2">Choudhury IT Services • ND, USA (Remote)</p>
+                        <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+                            <li>Led technical training initiatives and mentored junior developers on AI/ML best practices, fostering a culture of continuous learning and innovation.</li>
+                            <li>Architected secure, scalable cloud-native solutions on AWS and Azure, integrating DevOps practices with Docker and Kubernetes, reducing infrastructure costs by 40%.</li>
+                            <li>Designed and deployed intelligent automation systems that improved operational efficiency by 45%. Developed predictive analytics models to automate complex workflows, enhancing client productivity by 60%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative border-l border-slate-800 ml-3 space-y-10 fade-in-section">
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-cyan-500"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                            <h3 class="text-lg font-semibold text-white">Internal Audit & Compliance</h3>
+                            <span class="text-xs font-mono text-slate-500">2020 - 2023</span>
+                        </div>
+                        <p class="text-sm text-cyan-400 mb-2">Confidential Group of Companies • Dhaka, Bangladesh</p>
+                        <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+                            <li>Leveraged MBA background to lead financial operations and fiscal planning initiatives during the COVID-19 economic transition, ensuring business continuity and stability.</li>
+                            <li>Maintained active engagement with data science trends and coding standards through independent study and small-scale automation scripts while managing core financial responsibilities.</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative pl-8">
+                        <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                            <h3 class="text-lg font-semibold text-white">Manager, IT and Marketing</h3>
+                            <span class="text-xs font-mono text-slate-500">2014 - 2020</span>
+                        </div>
+                        <p class="text-sm text-cyan-400 mb-2">Only Kenakata E-Commerce • Khulna, Bangladesh</p>
+                        <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+                            <li>Led end-to-end development of Android applications and Python/Django platforms.</li>
+                            <li>Deployed ML models for sales forecasting and demand prediction, improving inventory accuracy by 35% and reducing stockouts by 28%.</li>
+                            <li>Implemented automated recommendation systems that increased average order value by 22% optimized digital marketing campaigns to lower customer acquisition costs by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="mb-10 fade-in-section">
+                <h2 class="text-2xl font-bold text-white mb-2">Featured Projects</h2>
+                <p class="text-sm text-slate-400">Advanced implementations in MLOps, Computer Vision, and Predictive Analytics.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <article class="glass-panel rounded-lg overflow-hidden flex flex-col hover:border-cyan-500/30 transition-all fade-in-section">
+                    <div class="h-40 bg-slate-800 relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Industrial Machine">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-2">Predictive Maintenance ML Pipeline</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Scikit-learn</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">XGBoost</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">MLflow</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Docker</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-grow">
+                            Built an end-to-end pipeline enabling data ingestion, feature engineering, and automated evaluation. •	Validated model performance achieving 92% accuracy in failure classification; projected a 40% reduction in unplanned downtime based on test dataset benchmarks. Supports scheduled retraining and versioned tracking.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-700/50 flex justify-end">
+                            <a href="https://github.com/skamrulh/Predictive-Maintenance-ML-Pipeline" class="text-xs font-semibold text-cyan-400 hover:text-white flex items-center">View Details <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="glass-panel rounded-lg overflow-hidden flex flex-col hover:border-cyan-500/30 transition-all fade-in-section">
+                    <div class="h-40 bg-slate-800 relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Industrial Machine">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-2">Personal AI Trainer</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">MoveNet</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">OpenAI GPT</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Redis</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">AWS ECS</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-grow">
+                           AI-Powered system integrating browser-based pose estimation with MoveNet and backend analysis for posture correction. Achieved reliable pose-to-feedback cycles under 200ms using Redis-backed streaming. Deployed via scalable Terraform-managed infrastructure.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-700/50 flex justify-end">
+                            <a href="https://github.com/skamrulh/Personal-AI-Trainer" class="text-xs font-semibold text-cyan-400 hover:text-white flex items-center">View Details <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="glass-panel rounded-lg overflow-hidden flex flex-col hover:border-cyan-500/30 transition-all fade-in-section">
+                    <div class="h-40 bg-slate-800 relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Supply Chain">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-2">Supply Chain Sentinel (MLOps)</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Redis Streams</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">PyTorch</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">DistilBERT</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Prometheus</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-grow">
+                            Production-grade MLOps platform for real-time risk mitigation. Uses a novel Hybrid ML Model (LSTM Autoencoder + DistilBERT) to provide explainable anomaly alerts. Achieves sub-second inference latency with full observability via Prometheus.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-700/50 flex justify-end">
+                            <a href="https://github.com/skamrulh/Supply-Chain-Sentinel" class="text-xs font-semibold text-cyan-400 hover:text-white flex items-center">View Details <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="glass-panel rounded-lg overflow-hidden flex flex-col hover:border-cyan-500/30 transition-all fade-in-section">
+                    <div class="h-40 bg-slate-800 relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Document Processing">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-white mb-2">Intelligent Document Processing</h3>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">FastAPI</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Kafka</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">Kubernetes</span>
+                            <span class="px-2 py-0.5 text-[10px] font-medium text-cyan-200 bg-cyan-900/30 rounded border border-cyan-800">OCR</span>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 flex-grow">
+                            Distributed platform utilizing asynchronous microservices and NLP for automated risk assessment of unstructured documents. • Achieved 90% accuracy in compliance violation detection on validation sets, demonstrating potential to reduce manual audit turnaround time by 85%.
+                        </p>
+                        <div class="mt-auto pt-3 border-t border-slate-700/50 flex justify-end">
+                            <a href="https://github.com/skamrulh/Document-Compliance-Monitoring-System" class="text-xs font-semibold text-cyan-400 hover:text-white flex items-center">View Details <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-16 bg-slate-900/30 border-y border-slate-800/50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <h2 class="text-2xl font-bold text-white mb-8 fade-in-section">Certifications & Courses</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    
+                    <div class="glass-panel p-4 rounded border-l-2 border-green-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-green-400 bg-green-900/20 px-1.5 py-0.5 rounded">Deeplearning.ai</span>
+                            <span class="text-xs text-slate-500">2025</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">ChatGPT Prompt Engineering for Developers</h3>
+                        <a href="https://learn.deeplearning.ai/courses/chatgpt-prompt-eng/lesson/dfbds/introduction" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded border-l-2 border-purple-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-purple-400 bg-purple-900/20 px-1.5 py-0.5 rounded">Learn Prompting</span>
+                            <span class="text-xs text-slate-500">2025</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Intro to Prompt Hacking</h3>
+                        <a href="https://learnprompting.thinkific.com/certificates/qpthiwm3ho" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded border-l-2 border-purple-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-purple-400 bg-purple-900/20 px-1.5 py-0.5 rounded">Learn Prompting</span>
+                            <span class="text-xs text-slate-500">2025</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Advanced Prompt Hacking</h3>
+                        <a href="https://learnprompting.thinkific.com/certificates/yyflqgbv5a" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded border-l-2 border-blue-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-blue-400 bg-blue-900/20 px-1.5 py-0.5 rounded">Microsoft Learning</span>
+                            <span class="text-xs text-slate-500">2025</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Power BI (PL-300 Certification Modules)</h3>
+                        <a href="https://learn.microsoft.com/api/achievements/share/en-us/SyedKamrulHasan-1456/CYN4LTU9?sharingId=60D746AA8165CCB3" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded border-l-2 border-sky-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-sky-400 bg-sky-900/20 px-1.5 py-0.5 rounded">Kaggle Courses</span>
+                            <span class="text-xs text-slate-500">2025</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Multiple AI-focused Courses Completed</h3>
+                        <a href="https://www.kaggle.com/learn/certification/failingnonai/intro-to-deep-learning" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded border-l-2 border-green-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-green-400 bg-green-900/20 px-1.5 py-0.5 rounded">EdX Courses</span>
+                            <span class="text-xs text-slate-500">Ongoing</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Multiple AI-focused Courses</h3>
+                        <a href="https://drive.google.com/file/d/1zLmd_B-ttCN0369bVrRmIcX93HSJ18mH/view?usp=sharing" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-panel p-4 rounded border-l-2 border-yellow-500 hover:bg-slate-800/50 transition-all fade-in-section">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-mono text-yellow-400 bg-yellow-900/20 px-1.5 py-0.5 rounded">Google Cloud</span>
+                            <span class="text-xs text-slate-500">Ongoing</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">AI/ML Certification Courses</h3>
+                        <a href="#" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-16 max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 fade-in-section">
+                <i data-lucide="graduation-cap" class="text-cyan-400 w-6 h-6"></i> Education
+            </h2>
+            <div class="grid grid-cols-1 gap-4 fade-in-section">
+                <div class="glass-panel p-6 rounded flex flex-col md:flex-row md:items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Master of Business Administration</h3>
+                        <h3 class="text-sm font-bold text-white">Major in Finance, Marketing</h3>
+                        <p class="text-sm text-cyan-400">North South University</p>
+                    </div>
+                    <div class="mt-2 md:mt-0 text-right">
+                        <span class="text-sm text-slate-500 block">2014</span>
+                        <span class="text-xs text-slate-600 block">Bangladesh</span>
+                    </div>
+                </div>
+                <div class="glass-panel p-6 rounded flex flex-col md:flex-row md:items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white">Master of Science in Physics</h3>
+                        <p class="text-sm text-cyan-400">National University</p>
+                    </div>
+                    <div class="mt-2 md:mt-0 text-right">
+                        <span class="text-sm text-slate-500 block">2005</span>
+                        <span class="text-xs text-slate-600 block">Bangladesh</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 text-center relative overflow-hidden">
+            <div class="max-w-2xl mx-auto px-4 relative z-10 fade-in-section">
+                <h2 class="text-3xl font-bold text-white mb-4">Let's Build Something Intelligent</h2>
+                <p class="text-sm text-slate-400 mb-8">
+                    Open to opportunities in Data Science and AI Engineering.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
-                        View My Work
+                <div class="flex justify-center gap-4">
+                    <a href="mailto:skamrulh@gmail.com" class="px-6 py-3 bg-cyan-600 text-white font-bold text-sm rounded hover:bg-cyan-500 transition-colors shadow-lg shadow-cyan-500/20">
+                        Send Email
                     </a>
-                    <a href="#contact" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                        Get In Touch
+                    <a href="https://www.linkedin.com/in/syed-kamrul-hasan-48a72548" class="px-6 py-3 bg-slate-800 text-white font-bold text-sm rounded border border-slate-700 hover:bg-slate-700 transition-colors">
+                        LinkedIn
                     </a>
-                </div>
-            </div>
-            <!-- Right Column (Image) --><div class="md:w-2/5 lg:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
-                <!-- Placeholder for your professional headshot --><div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gray-800 rounded-full border-4 border-cyan-500 shadow-2xl overflow-hidden">
-                    <img 
-                        src="headshot_reduce_resized.jpg" 
-                        alt="A professional headshot of Syed Kamrul Hasan"
-                        class="w-full h-full object-cover object-top" <!-- MODIFIED: Changed object-contain back to object-cover, kept object-top -->onerror="this.src='https://placehold.co/400x400/111827/7DD3FC?text=Your+Photo'; this.onerror=null;"
-                    >
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section --><section id="skills" class="bg-gray-800 py-20 md:py-24">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12 fade-in">
-                    My Technical Toolkit
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Column 1: Languages & Databases --><div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-1 opacity-0">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="database" class="w-8 h-8 text-cyan-400 mr-3"></i>
-                            <h3 class="text-2xl font-semibold text-white">Languages & Databases</h3>
-                        </div>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Python (Pandas, NumPy)</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>R</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>SQL (PostgreSQL, MySQL)</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>NoSQL (MongoDB)</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Column 2: ML & DL Frameworks --><div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-2 opacity-0">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="brain-circuit" class="w-8 h-8 text-cyan-400 mr-3"></i>
-                            <h3 class="text-2xl font-semibold text-white">ML & Deep Learning</h3>
-                        </div>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Scikit-learn</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>TensorFlow</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>PyTorch</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Keras</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Column 3: Tools & Platforms --><div class="bg-gray-900 p-6 rounded-xl shadow-lg fade-in fade-in-delay-3 opacity-0">
-                        <div class="flex items-center mb-4">
-                            <i data-lucide="wrench" class="w-8 h-8 text-cyan-400 mr-3"></i>
-                            <h3 class="text-2xl font-semibold text-white">Tools & Platforms</h3>
-                        </div>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Git & GitHub</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Docker</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Jupyter Notebooks</li>
-                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2"></i>Tableau / Power BI</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-24">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12 fade-in">
-                    Featured Projects
-                </h2>
-                
-                <!-- Project Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project 1 -->
-                    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col fade-in fade-in-delay-4 opacity-0">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 id="project-title-1" class="text-2xl font-semibold text-white mb-3">Project Title 1: End-to-End Predictive Maintenance ML Pipeline</h3>
-                            <p id="project-desc-1" class="text-gray-300 mb-4 flex-grow">
-                                Engineered a complete ML pipeline from synthetic data generation to production deployment using technologies 
-                                Python, Scikit-learn, FastAPI, Model Deployment, MLOps. Delivered models achieving 0.95+ ROC-AUC for failure 
-                                classification and <30 hours MAE for RUL prediction, with capability to process 10,000+ predictions per hour.
-                            </p>
-                            <!-- Tags for technologies used -->
-                            <div id="project-tags-1" class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                                <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Scikit-learn</span>
-                                <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">FastAPI</span>
-                            </div>
-                            <div class="mt-auto pt-4 border-t border-gray-700 space-y-3">
-
-                                    <!-- FIX: Added 'spinner' class to be used as a selector -->
-                                    <i data-lucide="loader-2" class="w-4 h-4 ml-2 animate-spin hidden spinner"></i>
-                                </button>
-                                <a href="https://github.com/skamrulh/Predictive-Maintenance-ML-Pipeline" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium group">
-                                    View on GitHub
-                                    <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        
-        
-        <!-- Contact Section --><section id="contact" class="bg-gray-800 py-20 md:py-24">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-                    Let's Connect
-                </h2>
-                <p class="text-lg text-gray-300 mb-8">
-                    I'm currently seeking new opportunities and always open to discussing new projects or ideas.
-                </p>
-                <a href="mailto:skamrulh@gmail.com" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg mb-12">
-                    Say Hello
-                </a>
-                
-                <!-- Social Links --><div class="flex justify-center space-x-6">
-                    <a href="https://www.linkedin.com/in/syed-kamrul-hasan-48a72548" class="text-gray-400 hover:text-white transition duration-300" aria-label="LinkedIn Profile">
-                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    <a href="https://github.com/skamrulh" class="px-6 py-3 bg-slate-800 text-white font-bold text-sm rounded border border-slate-700 hover:bg-slate-700 transition-colors">
+                        Github
                     </a>
-                    <a href="https://github.com/skamrulh" class="text-gray-400 hover:text-white transition duration-300" aria-label="GitHub Profile">
-                        <i data-lucide="github" class="w-8 h-8"></i>
-                    </a>
-                
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer --><footer class="bg-gray-900 border-t border-gray-700">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-            <p class="text-gray-400 text-sm">
-                &copy; 2025 Syed Kamrul Hasan. All rights reserved.
-            </p>
-        </div>
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-xs text-slate-600">
+        &copy; 2025 Syed Kamrul Hasan. All rights reserved.
     </footer>
 
-    <!-- Script to initialize Lucide icons and Gemini API --><script>
-        // Wait for the DOM to be fully loaded before running scripts
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Check if lucide is available, then create icons
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            } else {
-                console.error("Lucide icons script did not load.");
-            }
-            
-            // Staggered fade-in animations on scroll
+            lucide.createIcons();
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-5');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
                 });
-            }, {
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.classList.add('opacity-0', 'translate-y-5', 'transition-all', 'duration-500', 'ease-out');
-                observer.observe(el);
-            });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
         });
-
-        // --- Gemini API Function ---
-
-        // Exponential backoff for retries
-        async function fetchWithBackoff(apiUrl, payload, retries = 3, delay = 1000) {
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.ok) {
-                        return await response.json();
-                    } else if (response.status === 429 || response.status >= 500) {
-                        // Throttling or server error, wait and retry
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        delay *= 2; // Increase delay
-                    } else {
-                        // Other client-side error, don't retry
-                        console.error("API request failed:", response.status, await response.text());
-                        return null;
-                    }
-                } catch (error) {
-                    // Network error, wait and retry
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2;
-                }
-            }
-            console.error("API request failed after all retries.");
-            return null;
-        }
-
-
-        async function generateProjectDescription(projectNumber, buttonElement) {
-            // 1. Set loading state
-            const buttonText = buttonElement.querySelector('.button-text');
-            // FIX: Select the spinner using the '.spinner' class
-            const buttonSpinner = buttonElement.querySelector('.spinner');
-            buttonElement.disabled = true;
-            buttonText.textContent = "Generating...";
-            if (buttonSpinner) buttonSpinner.classList.remove('hidden');
-
-            try {
-                // 2. Get project data
-                const title = document.getElementById(`project-title-${projectNumber}`).textContent;
-                const tagsContainer = document.getElementById(`project-tags-${projectNumber}`);
-                const tags = Array.from(tagsContainer.querySelectorAll('span')).map(span => span.textContent).join(', ');
-                const descElement = document.getElementById(`project-desc-${projectNumber}`);
-                
-                // 3. Construct Prompt
-                const systemPrompt = "You are a professional portfolio assistant. Your task is to write a concise, impressive, single-sentence project description for a data scientist's portfolio. The description should sound professional and highlight the value of the project.";
-                const userQuery = `Generate a description based on this info:\nProject Title: ${title}\nTechnologies Used: ${tags}`;
-
-                // 4. Call Gemini API
-                const apiKey = ""; // Leave as-is, will be handled by the environment
-                const apiUrl = `https://generativelightlanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
-                };
-
-                const result = await fetchWithBackoff(apiUrl, payload);
-
-                // 5. Process response
-                const candidate = result?.candidates?.[0];
-                if (candidate && candidate.content?.parts?.[0]?.text) {
-                    let generatedText = candidate.content.parts[0].text;
-                    // Clean up response (remove potential quotes)
-                    generatedText = generatedText.trim().replace(/^"|"$/g, '');
-                    descElement.textContent = generatedText;
-                } else {
-                    console.error("Error: Could not parse generated text from API response.", result);
-                    descElement.textContent = "Error generating description. Please try again.";
-                }
-
-            } catch (error) {
-                console.error("Error in generateProjectDescription:", error);
-                document.getElementById(`project-desc-${projectNumber}`).textContent = "An error occurred. Please check the console.";
-            } finally {
-                // 6. Reset loading state
-                buttonElement.disabled = false;
-                buttonText.textContent = "✨ AI-Generate Description";
-                if (buttonSpinner) buttonSpinner.classList.add('hidden');
-            }
-        }
-
-        async function generateBio() {
-            // 1. Set loading state
-            const buttonElement = document.getElementById('generate-bio-btn');
-            const buttonText = buttonElement.querySelector('.button-text');
-            // FIX: Select the spinner using the '.spinner' class
-            const buttonSpinner = buttonElement.querySelector('.spinner');
-            buttonElement.disabled = true;
-            buttonText.textContent = "Generating...";
-            if (buttonSpinner) buttonSpinner.classList.remove('hidden');
-
-            try {
-                // 2. Get user input
-                const roleInput = document.getElementById('ai-role').value;
-                const keywordsInput = document.getElementById('ai-keywords').value;
-                const name = document.querySelector('a.text-2xl.font-bold.text-white').textContent; // Gets "[Your Name]" from header
-                
-                const roleElement = document.getElementById('user-role');
-                const bioElement = document.getElementById('user-bio');
-
-                if (!roleInput || !keywordsInput) {
-                    bioElement.textContent = "Please enter both a role and some keywords to generate a bio.";
-                    // Re-enable button early if inputs are missing
-                    buttonElement.disabled = false;
-                    buttonText.textContent = "Generate New Bio";
-                    if (buttonSpinner) buttonSpinner.classList.add('hidden');
-                    return; 
-                }
-                
-                // 3. Construct Prompt
-                const systemPrompt = "You are a professional resume writer and career coach. Your task is to write a concise, compelling, and professional 'About Me' bio for a personal portfolio website. Write in the first person ('I'). The bio should be one paragraph (about 3-4 sentences).";
-                const userQuery = `Generate a new 'About Me' paragraph for me. My name is ${name}, my professional role is "${roleInput}", and my key skills/keywords are "${keywordsInput}".`;
-
-                // 4. Call Gemini API
-                const apiKey = ""; // Leave as-is
-                const apiUrl = `https://generativelightlanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: {
-                        parts: [{ text: systemPrompt }]
-                    },
-                };
-
-                const result = await fetchWithBackoff(apiUrl, payload);
-
-                // 5. Process response
-                const candidate = result?.candidates?.[0];
-                if (candidate && candidate.content?.parts?.[0]?.text) {
-                    let generatedText = candidate.content.parts[0].text;
-                    // Clean up response
-                    generatedText = generatedText.trim().replace(/^"|"$/g, '');
-                    
-                    // Update the page
-                    roleElement.textContent = roleInput;
-                    bioElement.textContent = generatedText;
-
-                } else {
-                    console.error("Error: Could not parse generated text from API response.", result);
-                    bioElement.textContent = "Error generating bio. Please try again.";
-                }
-
-            } catch (error) {
-                console.error("Error in generateBio:", error);
-                if(document.getElementById('user-bio').textContent === "") { // Don't overwrite specific error messages
-                     document.getElementById('user-bio').textContent = "An error occurred. Please check the console.";
-                }
-            } finally {
-                // 6. Reset loading state
-                buttonElement.disabled = false;
-                buttonText.textContent = "Generate New Bio";
-                if (buttonSpinner) buttonSpinner.classList.add('hidden');
-            }
-        }
     </script>
 </body>
 </html>
-
-
-
-
-
